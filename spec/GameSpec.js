@@ -1,7 +1,18 @@
 describe("Game", function() {
 
-  describe("")
+  beforeEach(function() {
+    player_1 = new Player("Joe");
+    player_2 = new Player("Cal");
+    game = new Game(player_1, player_2);
+  });
 
+  describe("claimSquare", function(){
+
+    it("allows a player to claim a square", function(){
+      game.claimSquare(0);
+      expect(game.board[0]).toEqual("X")
+    });
+  });
 });
 
 //
