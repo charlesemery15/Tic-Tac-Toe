@@ -17,12 +17,17 @@ describe("Game", function() {
       game.claimSquare(0);
       expect(function() { game.claimSquare(0)}).toThrow(new Error("Sorry this square has already been taken"))
     });
+
+    it("will swap player after a square has been claimed", function(){
+      game.claimSquare(0);
+      expect(game.currentPlayer).toEqual(player_O)
+    });
   });
 
   describe("switchPlayer", function(){
 
     it("alternates between each player", function(){
-      game.switchPlayer()
+      game.switchPlayer();
       expect(game.currentPlayer).toEqual(player_O)
     });
   });
