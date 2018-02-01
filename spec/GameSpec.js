@@ -8,10 +8,16 @@ describe("Game", function() {
 
   describe("claimSquare", function(){
 
-    it("allows a player to claim a square", function(){
+    it("allows player_X to claim a square", function(){
       game.claimSquare(0);
       expect(game.board[0]).toEqual("X")
     });
+
+    it("allows player_O to claim a square", function(){
+      game.claimSquare(0);
+      game.claimSquare(1);
+      expect(game.board[1]).toEqual("O")
+    })
 
     it("only allows un-claimed squares to be selected", function(){
       game.claimSquare(0);
