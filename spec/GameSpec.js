@@ -12,7 +12,13 @@ describe("Game", function() {
       game.claimSquare(0);
       expect(game.board[0]).toEqual("X")
     });
+
+    it("only allows un-claimed squares to be selected", function(){
+      game.claimSquare(0);
+      expect(function() { game.claimSquare(0)}).toThrow(new Error("Sorry this square has already been taken"))
+    });
   });
+
 });
 
 //

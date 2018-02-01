@@ -1,11 +1,15 @@
 function Game(player_1, player_2) {
   this.players = [player_1, player_2]
-  this.board = [null,null,null,
-                null,null,null,
-                null,null,null]
+  this.board = ["_","_","_",
+                "_","_","_",
+                "_","_","_"]
 }
 
 Game.prototype.claimSquare = function(num) {
-  var claim = "X"
-  this.board[num] = claim
+  var claim = "X";
+    if (this.board[num] === "_") {
+        this.board[num] = claim;
+  } else {
+        throw new Error("Sorry this square has already been taken");
+  }
 };
