@@ -1,9 +1,9 @@
 describe("Game", function() {
 
   beforeEach(function() {
-    player_1 = new Player("Joe");
-    player_2 = new Player("Cal");
-    game = new Game(player_1, player_2);
+    player_X = new Player("Joe");
+    player_O = new Player("Cal");
+    game = new Game(player_X, player_O);
   });
 
   describe("claimSquare", function(){
@@ -19,35 +19,11 @@ describe("Game", function() {
     });
   });
 
-});
+  describe("switchPlayer", function(){
 
-//
-// describe("Player", function() {
-//   var player;
-//   var song;
-//
-//   beforeEach(function() {
-//     player = new Player();
-//     song = new Song();
-//   });
-//
-//   it("should be able to play a Song", function() {
-//     player.play(song);
-//     expect(player.currentlyPlayingSong).toEqual(song);
-//
-//     //demonstrates use of custom matcher
-//     expect(player).toBePlaying(song);
-//   });
-//
-//   describe("when song has been paused", function() {
-//     beforeEach(function() {
-//       player.play(song);
-//       player.pause();
-//     });
-//
-//     it("should indicate that the song is currently paused", function() {
-//       expect(player.isPlaying).toBeFalsy();
-//
-//       // demonstrates use of 'not' with a custom matcher
-//       expect(player).not.toBePlaying(song);
-//     });
+    it("alternates between each player", function(){
+      game.switchPlayer()
+      expect(game.currentPlayer).toEqual(player_O)
+    });
+  });
+});
