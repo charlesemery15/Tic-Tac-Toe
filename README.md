@@ -46,9 +46,16 @@ So I can celebrate a win
 I would like to be confirmed as the winner
 ```
 
+```
+As players
+So I we can finish a game
+I would like the game to end when all squares are taken
+```
+
 Approach
 --------
 * TDD
 * OOD
 * Agile
 * Using Java Script
+* Testing with Jasmine
